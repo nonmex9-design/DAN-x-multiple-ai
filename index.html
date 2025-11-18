@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAN-x-multiple-ai - DAN Jailbreaks Collection</title>
+    <meta name="description" content="Classic DAN-style jailbreak prompts for Grok, ChatGPT and more - all in one place." />
+    <style>
+        :root {
+            --bg: #0d1117;
+            --text: #c9d1d9;
+            --accent: #58a6ff;
+            --card: #161b22;
+            --border: #30363d;
+            --btn-gradient-top: rgba(255,255,255,0.05);
+            --btn-gradient-bottom: rgba(0,0,0,0.4);
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(180deg, #161b22, var(--bg));
+            text-align: center;
+            padding: 5rem 1rem 4rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            margin: 0 0 0.5rem;
+            font-size: 3.2rem;
+            color: #f0f6fc;
+        }
+        .tagline {
+            font-size: 1.4rem;
+            opacity: 0.9;
+        }
+        main {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        .card-header {
+            padding: 1.5rem;
+            text-align: center;
+            background: #0d1117;
+            border-bottom: 1px solid var(--border);
+        }
+        .card-header h2 {
+            margin: 0;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        .card-body {
+            padding: 2rem;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            position: relative;
+            background: var(--accent);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, var(--btn-gradient-top), var(--btn-gradient-bottom));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .btn:hover::before {
+            opacity: 1;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(88,166,255,0.4);
+        }
+        .btn-secondary {
+            background: #21262d;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+        .btn-secondary:hover {
+            background: #30363d;
+        }
+        footer {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2.4rem; }
+            .tagline { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DAN-x-multiple-ai</h1>
+        <p class="tagline">Classic DAN jailbreak prompts for multiple AIs — all in one place.</p>
+    </header>
+
+    <main>
+
+        <div class="grid">
+            <!-- Grok Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Grok (xAI)</h2>
+                </div>
+                <div class="card-body">
+                    <p>Latest working DAN-style prompts for Grok 3 / Grok 4</p>
+                    <a href="https://github.com/nonmex9-design/DAN-x-multiple-ai/tree/main/Grok" class="btn" target="_blank">
+                        Open Grok Prompts →
+                    </a>
+                </div>
+            </div>
+
+            <!-- ChatGPT Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>ChatGPT (OpenAI)</h2>
+                </div>
+                <div class="card-body">
+                    <p>Classic and updated DAN jailbreaks that still work in 2025</p>
+                    <a href="https://github.com/nonmex9-design/DAN-x-multiple-ai/tree/main/ChatGPT" class="btn" target="_blank">
+                        Open ChatGPT Prompts →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 4rem 0;">
+            <a href="https://github.com/nonmex9-design/DAN-x-multiple-ai" class="btn btn-secondary" target="_blank">View Full Repository</a>
+            <a href="https://github.com/nonmex9-design/DAN-x-multiple-ai/stargazers" class="btn btn-secondary" target="_blank">★ Star on GitHub</a>
+        </div>
+
+        <section style="background: var(--card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); text-align: center;">
+            <h2 style="color: var(--accent);">Got a new DAN prompt?</h2>
+            <p>Fork → add your .txt file → pull request. More AIs = better repo.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>DAN-x-multiple-ai • Plain text. No nonsense. • 2025</p>
+    </footer>
+
+</body>
+</html>
