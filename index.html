@@ -1,179 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DAN-x-multiple-ai - DAN Jailbreaks Collection</title>
-    <meta name="description" content="Classic DAN-style jailbreak prompts for Grok, ChatGPT and more - all in one place." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAN × Multiple AI</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.2.12/marked.min.js"></script>
+    
     <style>
-        :root {
-            --bg: #0d1117;
-            --text: #c9d1d9;
-            --accent: #58a6ff;
-            --card: #161b22;
-            --border: #30363d;
-            --btn-gradient-top: rgba(255,255,255,0.05);
-            --btn-gradient-bottom: rgba(0,0,0,0.4);
-        }
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(180deg, #161b22, var(--bg));
-            text-align: center;
-            padding: 5rem 1rem 4rem;
-            border-bottom: 1px solid var(--border);
-        }
-        h1 {
-            margin: 0 0 0.5rem;
-            font-size: 3.2rem;
-            color: #f0f6fc;
-        }
-        .tagline {
-            font-size: 1.4rem;
-            opacity: 0.9;
-        }
-        main {
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-        }
-        .card-header {
-            padding: 1.5rem;
-            text-align: center;
-            background: #0d1117;
-            border-bottom: 1px solid var(--border);
-        }
-        .card-header h2 {
-            margin: 0;
-            color: var(--accent);
-            font-size: 1.5rem;
-        }
-        .card-body {
-            padding: 2rem;
-            text-align: center;
-        }
-        .btn {
+        /* Custom styles for the white icons on a dark background */
+        .white-icon {
+            filter: invert(100%);
             display: inline-block;
-            position: relative;
-            background: var(--accent);
-            color: #fff;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            vertical-align: middle;
+            margin-right: 0.5rem;
         }
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to bottom, var(--btn-gradient-top), var(--btn-gradient-bottom));
-            opacity: 0;
-            transition: opacity 0.3s;
+
+        /* Custom Inter font setup */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Black background with a subtle blue radial gradient from the bottom-left corner */
+            background-color: #111827; /* Dark background fallback */
+            background-image: radial-gradient(circle at 0% 100%, rgba(30, 64, 175, 0.25) 0%, rgba(17, 24, 39, 1) 40%, rgba(17, 24, 39, 1) 100%);
+            min-height: 100vh; /* Ensure the gradient covers the full height */
         }
-        .btn:hover::before {
-            opacity: 1;
+        
+        /* Ensure the main container cards are opaque, blocking the body gradient */
+        .bg-dark-card {
+            background-color: #1F2937; 
         }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(88,166,255,0.4);
+
+        /* Styling for markdown content */
+        .markdown-content ul, .markdown-content ol {
+            padding-left: 1.5rem;
         }
-        .btn-secondary {
-            background: #21262d;
-            border: 1px solid var(--accent);
-            color: var(--accent);
+        .markdown-content strong {
+            color: white; /* Ensure bold text pops */
         }
-        .btn-secondary:hover {
-            background: #30363d;
+        .markdown-content li {
+            margin-bottom: 0.5rem;
         }
-        footer {
-            text-align: center;
-            padding: 4rem 1rem 2rem;
-            color: #8b949e;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 600px) {
-            h1 { font-size: 2.4rem; }
-            .tagline { font-size: 1.2rem; }
-        }
+
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#3B82F6',
+                        'dark-bg': '#111827',
+                        'dark-card': '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="text-gray-200 p-4 sm:p-8">
 
-    <header>
-        <h1>DAN-x-multiple-ai</h1>
-        <p class="tagline">Classic DAN jailbreak prompts for multiple AIs — all in one place.</p>
-    </header>
-
-    <main>
-
-        <div class="grid">
-            <!-- Grok Card -->
-            <div class="card">
-                <div class="card-header">
-                    <h2>Grok (xAI)</h2>
-                </div>
-                <div class="card-body">
-                    <p>Latest working DAN-style prompts for Grok 3 / Grok 4</p>
-                    <a href="https://github.com/nonmex9-design/DAN-x-multiple-ai/tree/main/Grok" class="btn" target="_blank">
-                        Open Grok Prompts →
-                    </a>
-                </div>
+    <div class="max-w-4xl mx-auto space-y-12">
+        
+        <!-- Header Section (Fully opaque) -->
+        <header class="text-center pt-8 pb-4 bg-dark-card rounded-xl shadow-2xl shadow-gray-900/50 border border-gray-700/50">
+            <h1 class="text-4xl sm:text-5xl font-extrabold flex items-center justify-center mb-4">
+                <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bot.svg" width="36" height="36" alt="Robot Icon" class="white-icon mr-3">
+                DAN × Multiple AI
+            </h1>
+            <p class="text-lg text-gray-400 max-w-xl mx-auto">
+                Use the classic **DAN jailbreak** with a bunch of different AIs — all in one place.
+            </p>
+            <div class="mt-6">
+                <!-- DAN Logo (50x50) -->
+                <img src="https://i.ibb.co/sJ5gN7g1/dan.png" alt="DAN Logo" width="50" height="50" class="mx-auto rounded-full shadow-lg border border-gray-700">
             </div>
+        </header>
 
-            <!-- ChatGPT Card -->
-            <div class="card">
-                <div class="card-header">
-                    <h2>ChatGPT (OpenAI)</h2>
-                </div>
-                <div class="card-body">
-                    <p>Classic and updated DAN jailbreaks that still work in 2025</p>
-                    <a href="https://github.com/nonmex9-design/DAN-x-multiple-ai/tree/main/ChatGPT" class="btn" target="_blank">
-                        Open ChatGPT Prompts →
-                    </a>
-                </div>
+        <!-- Prompts Section (Fully opaque) -->
+        <section class="bg-dark-card p-6 sm:p-10 rounded-xl shadow-xl border border-gray-700/50">
+            <h2 class="text-3xl font-bold mb-6 text-white flex items-center">
+                <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rocket.svg" width="24" height="24" alt="Rocket Icon" class="white-icon mr-3">
+                Get the Prompts!
+            </h2>
+            <p class="text-gray-400 mb-6">Click a button below to open the raw jailbreak text file for the respective AI platform.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/ChatGPT/method.txt" target="_blank" class="prompt-button">ChatGPT</a>
+                <a href="https://raw.githubusercontent.com/nonmexusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/Grok/method.txt" target="_blank" class="prompt-button">Grok</a>
+                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/Gemini/method.txt" target="_blank" class="prompt-button">Gemini</a>
+                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/SwitchAI-Custom/method.txt" target="_blank" class="prompt-button">SwitchAI</a>
             </div>
-        </div>
-
-        <div style="text-align: center; margin: 4rem 0;">
-            <a href="https://github.com/nonmex9-design/DAN-x-multiple-ai" class="btn btn-secondary" target="_blank">View Full Repository</a>
-            <a href="https://github.com/nonmex9-design/DAN-x-multiple-ai/stargazers" class="btn btn-secondary" target="_blank">★ Star on GitHub</a>
-        </div>
-
-        <section style="background: var(--card); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); text-align: center;">
-            <h2 style="color: var(--accent);">Got a new DAN prompt?</h2>
-            <p>Fork → add your .txt file → pull request. More AIs = better repo.</p>
         </section>
 
-    </main>
+        <!-- Content Sections Rendered by Markdown (Fully opaque) -->
 
-    <footer>
-        <p>DAN-x-multiple-ai • Plain text. No nonsense. • 2025</p>
-    </footer>
+        <!-- What This Repo Is Section -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-bold text-white flex items-center">
+                <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/book-open.svg" width="24" height="24" alt="Book Icon" class="white-icon mr-3">
+                What This Repo Is
+            </h2>
+            <div id="repo-is-content" class="markdown-content text-gray-400"></div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-bold text-white flex items-center">
+                <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rocket.svg" width="24" height="24" alt="Rocket Icon" class="white-icon mr-3">
+                How to Use
+            </h2>
+            <div id="how-to-use-content" class="markdown-content text-gray-400"></div>
+        </section>
+
+        <!-- Contributing Section -->
+        <section class="space-y-4">
+            <h2 class="text-2xl font-bold text-white flex items-center">
+                <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/handshake.svg" width="24" height="24" alt="Handshake Icon" class="white-icon mr-3">
+                Contributing
+            </h2>
+            <div id="contributing-content" class="markdown-content text-gray-400"></div>
+        </section>
+
+        <!-- Supported AI Platforms Section (Fully opaque) -->
+        <section class="space-y-4 pb-8">
+            <h2 class="text-2xl font-bold text-white flex items-center">
+                <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/star.svg" width="24" height="24" alt="Star Icon" class="white-icon mr-3">
+                Supported AI Platforms
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border border-gray-700/50 rounded-lg overflow-hidden bg-dark-card">
+                    <thead>
+                        <tr class="bg-gray-800 text-gray-300 uppercase text-sm tracking-wider">
+                            <th class="p-4">AI</th>
+                            <th class="p-4">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-semibold text-white">Grok</td>
+                            <td class="p-4"><a href="https://grok.com" target="_blank" class="text-primary-blue hover:text-blue-400 transition-colors">https://grok.com</a></td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-semibold text-white">ChatGPT</td>
+                            <td class="p-4"><a href="https://chatgpt.com" target="_blank" class="text-primary-blue hover:text-blue-400 transition-colors">https://chatgpt.com</a></td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-semibold text-white">Gemini</td>
+                            <td class="p-4"><a href="https://gemini.google.com/" target="_blank" class="text-primary-blue hover:text-blue-400 transition-colors">https://gemini.google.com/</a></td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="p-4 font-semibold text-white">SwitchAI</td>
+                            <td class="p-4"><a href="https://switchai.pages.dev/" target="_blank" class="text-primary-blue hover:text-blue-400 transition-colors">https://switchai.pages.dev/</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Disclaimer (Fully opaque) -->
+        <footer class="text-center pt-4 pb-8 border-t border-gray-800">
+            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700/50">
+                <p class="text-sm text-gray-400 font-medium">
+                    <strong class="text-yellow-400">Disclaimer:</strong> These prompts are for educational and testing purposes only. Always review AI behavior and use responsibly.
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Markdown Content to be injected
+        const repoIsMarkdown = "A small collection of text files containing jailbreak-style prompts. Each file is a different method you can copy and use with whatever AI you're testing.";
+
+        const howToUseMarkdown = 
+            "1. **Open a prompt file** — Click one of the buttons above to get the jailbreak text.\n" +
+            "2. **Copy everything** — Select all the text from the file.\n" +
+            "3. **Paste it into the AI chat** — Drop it directly into your AI's chat interface.\n" +
+            "4. **That's literally it** — Watch the magic happen.";
+
+        const contributingMarkdown = 
+            "Got another DAN-style jailbreak for a different AI? We'd love it! Simply:\n\n" +
+            "* Create a new `.txt` file with your jailbreak prompt\n" +
+            "* Use a clear filename (e.g., `claude-dan.txt`)\n" +
+            "* Submit a pull request";
+
+        // Render Markdown content
+        document.getElementById('repo-is-content').innerHTML = marked.parse(repoIsMarkdown);
+        document.getElementById('how-to-use-content').innerHTML = marked.parse(howToUseMarkdown);
+        document.getElementById('contributing-content').innerHTML = marked.parse(contributingMarkdown);
+
+        // JavaScript for button hover effect (using dynamic Tailwind classes)
+        document.querySelectorAll('.prompt-button').forEach(button => {
+            button.classList.add(
+                'w-full', 'py-3', 'px-4', 'rounded-lg', 'font-semibold', 
+                'text-white', 'text-center', 'transition-all', 'duration-200',
+                'bg-gray-800', 'hover:bg-primary-blue', 'hover:shadow-lg', 
+                'hover:shadow-primary-blue/30', 'border', 'border-gray-700'
+            );
+        });
+    </script>
 
 </body>
 </html>
