@@ -19,6 +19,10 @@ A small collection of text files containing jailbreak-style prompts. Each file i
 
 Got another DAN-style jailbreak for a different AI? Add a new `.txt` file and throw it in.
 
----
+**AI List**
+Grok: https://grok.com
+ChatGPT: https://chatgpt.com
+Gemini: https://gemini.google.com/
+SwitchAI: https://switchai.pages.dev/
 
-*Simple repo. Plain text prompts. No nonsense.*
+---
