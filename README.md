@@ -2,7 +2,7 @@
 
 Use the classic **DAN jailbreak** with a bunch of different AIs — all in one place.
 
-![DAN](https://i.ibb.co/sJ5gN7g1/dan.png)
+<img src="https://i.ibb.co/sJ5gN7g1/dan.png"><
 
 ## What This Repo Is
 
