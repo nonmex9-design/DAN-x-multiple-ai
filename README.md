@@ -1,8 +1,7 @@
 # <img src="https://unpkg.com/lucide-static@latest/icons/bot.svg" width="24" height="24" alt="Robot Icon" style="filter: invert(100%);"> DAN × Multiple AI
+<img src="https://i.ibb.co/sJ5gN7g1/dan.png" alt="DAN Logo" width="50" height="50">
 
 Use the classic **DAN jailbreak** with a bunch of different AIs — all in one place.
-
-<img src="https://i.ibb.co/sJ5gN7g1/dan.png" alt="DAN Logo" width="50" height="50">
 
 ## <img src="https://unpkg.com/lucide-static@latest/icons/book-open.svg" width="24" height="24" alt="Book Icon" style="filter: invert(100%);"> What This Repo Is
 
