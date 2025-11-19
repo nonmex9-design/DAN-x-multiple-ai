@@ -21,15 +21,15 @@
         /* Custom Inter font setup */
         body {
             font-family: 'Inter', sans-serif;
-            /* Black background with a subtle blue radial gradient from the bottom-left corner */
-            background-color: #111827; /* Dark background fallback */
-            background-image: radial-gradient(circle at 0% 100%, rgba(30, 64, 175, 0.25) 0%, rgba(17, 24, 39, 1) 40%, rgba(17, 24, 39, 1) 100%);
-            min-height: 100vh; /* Ensure the gradient covers the full height */
+            background-color: #000000;
+            background-image: radial-gradient(ellipse 800px 600px at 0% 100%, rgba(30, 90, 200, 0.4) 0%, rgba(15, 40, 120, 0.15) 30%, rgba(0, 0, 0, 0) 60%);
+            background-attachment: fixed;
+            min-height: 100vh;
         }
         
-        /* Ensure the main container cards are opaque, blocking the body gradient */
+        /* Deep charcoal gray for content cards */
         .bg-dark-card {
-            background-color: #1F2937; 
+            background-color: #111827; 
         }
 
         /* Styling for markdown content */
@@ -37,21 +37,28 @@
             padding-left: 1.5rem;
         }
         .markdown-content strong {
-            color: white; /* Ensure bold text pops */
+            color: white;
         }
         .markdown-content li {
             margin-bottom: 0.5rem;
         }
 
+        .prompt-button {
+            transition: all 0.2s ease;
+        }
+
+        .prompt-button:hover {
+            transform: translateY(-2px);
+        }
     </style>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary-blue': '#3B82F6',
-                        'dark-bg': '#111827',
-                        'dark-card': '#1F2937',
+                        'primary-blue': '#1D4ED8',
+                        'dark-bg': '#000000',
+                        'dark-card': '#111827',
                     }
                 }
             }
@@ -62,7 +69,7 @@
 
     <div class="max-w-4xl mx-auto space-y-12">
         
-        <!-- Header Section (Fully opaque) -->
+        <!-- Header Section -->
         <header class="text-center pt-8 pb-4 bg-dark-card rounded-xl shadow-2xl shadow-gray-900/50 border border-gray-700/50">
             <h1 class="text-4xl sm:text-5xl font-extrabold flex items-center justify-center mb-4">
                 <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/bot.svg" width="36" height="36" alt="Robot Icon" class="white-icon mr-3">
@@ -72,12 +79,11 @@
                 Use the classic **DAN jailbreak** with a bunch of different AIs — all in one place.
             </p>
             <div class="mt-6">
-                <!-- DAN Logo (50x50) -->
                 <img src="https://i.ibb.co/sJ5gN7g1/dan.png" alt="DAN Logo" width="50" height="50" class="mx-auto rounded-full shadow-lg border border-gray-700">
             </div>
         </header>
 
-        <!-- Prompts Section (Fully opaque) -->
+        <!-- Prompts Section -->
         <section class="bg-dark-card p-6 sm:p-10 rounded-xl shadow-xl border border-gray-700/50">
             <h2 class="text-3xl font-bold mb-6 text-white flex items-center">
                 <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/rocket.svg" width="24" height="24" alt="Rocket Icon" class="white-icon mr-3">
@@ -86,14 +92,12 @@
             <p class="text-gray-400 mb-6">Click a button below to open the raw jailbreak text file for the respective AI platform.</p>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/ChatGPT/method.txt" target="_blank" class="prompt-button">ChatGPT</a>
-                <a href="https://raw.githubusercontent.com/nonmexusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/Grok/method.txt" target="_blank" class="prompt-button">Grok</a>
-                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/Gemini/method.txt" target="_blank" class="prompt-button">Gemini</a>
-                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/SwitchAI-Custom/method.txt" target="_blank" class="prompt-button">SwitchAI</a>
+                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/ChatGPT/method.txt" target="_blank" class="prompt-button w-full py-3 px-4 rounded-lg font-semibold text-white text-center bg-gray-800 hover:bg-primary-blue hover:shadow-lg hover:shadow-primary-blue/30 border border-gray-700">ChatGPT</a>
+                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/Grok/method.txt" target="_blank" class="prompt-button w-full py-3 px-4 rounded-lg font-semibold text-white text-center bg-gray-800 hover:bg-primary-blue hover:shadow-lg hover:shadow-primary-blue/30 border border-gray-700">Grok</a>
+                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/Gemini/method.txt" target="_blank" class="prompt-button w-full py-3 px-4 rounded-lg font-semibold text-white text-center bg-gray-800 hover:bg-primary-blue hover:shadow-lg hover:shadow-primary-blue/30 border border-gray-700">Gemini</a>
+                <a href="https://raw.githubusercontent.com/nonmex9-design/DAN-x-multiple-ai/refs/heads/main/SwitchAI-Custom/method.txt" target="_blank" class="prompt-button w-full py-3 px-4 rounded-lg font-semibold text-white text-center bg-gray-800 hover:bg-primary-blue hover:shadow-lg hover:shadow-primary-blue/30 border border-gray-700">SwitchAI</a>
             </div>
         </section>
-
-        <!-- Content Sections Rendered by Markdown (Fully opaque) -->
 
         <!-- What This Repo Is Section -->
         <section class="space-y-4">
@@ -122,7 +126,7 @@
             <div id="contributing-content" class="markdown-content text-gray-400"></div>
         </section>
 
-        <!-- Supported AI Platforms Section (Fully opaque) -->
+        <!-- Supported AI Platforms Section -->
         <section class="space-y-4 pb-8">
             <h2 class="text-2xl font-bold text-white flex items-center">
                 <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/star.svg" width="24" height="24" alt="Star Icon" class="white-icon mr-3">
@@ -158,7 +162,7 @@
             </div>
         </section>
         
-        <!-- Disclaimer (Fully opaque) -->
+        <!-- Disclaimer -->
         <footer class="text-center pt-4 pb-8 border-t border-gray-800">
             <div class="bg-gray-800 p-4 rounded-lg border border-gray-700/50">
                 <p class="text-sm text-gray-400 font-medium">
@@ -189,16 +193,6 @@
         document.getElementById('repo-is-content').innerHTML = marked.parse(repoIsMarkdown);
         document.getElementById('how-to-use-content').innerHTML = marked.parse(howToUseMarkdown);
         document.getElementById('contributing-content').innerHTML = marked.parse(contributingMarkdown);
-
-        // JavaScript for button hover effect (using dynamic Tailwind classes)
-        document.querySelectorAll('.prompt-button').forEach(button => {
-            button.classList.add(
-                'w-full', 'py-3', 'px-4', 'rounded-lg', 'font-semibold', 
-                'text-white', 'text-center', 'transition-all', 'duration-200',
-                'bg-gray-800', 'hover:bg-primary-blue', 'hover:shadow-lg', 
-                'hover:shadow-primary-blue/30', 'border', 'border-gray-700'
-            );
-        });
     </script>
 
 </body>
